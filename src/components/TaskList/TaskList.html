@@ -18,7 +18,12 @@
 		<tbody>
 		<tr>
 			<td colspan="6">
-				<input v-model="filter" @input="filterList()" type="text" placeholder="Фильтр"/>
+				{{filter}}<input v-model="filter" @input="filterList()" type="text" placeholder="Фильтр"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				{{filter}}
 			</td>
 		</tr>
 		<tr v-for="(item, index) in filteredList" :key="index">

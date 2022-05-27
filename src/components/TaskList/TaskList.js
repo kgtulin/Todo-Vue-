@@ -27,7 +27,11 @@ export default {
 
 		filterList()
 		{
-			this.filteredList=this.taskList.filter(task=>task.name.toLowerCase().indexOf(this.filter.toLowerCase)!=-1);
+     		if(this.filter=="")
+        		this.filteredList=this.taskList;
+    	  	else
+				  this.filteredList=this.taskList.filter(task=>task.name.toLowerCase().indexOf(this.filter.toLowerCase())!=-1);
+
 		},
 
 
@@ -87,7 +91,7 @@ export default {
 			this.currentTask={id:"", name:"", price:0, user_id:"", time:0};
 			this.currentMode=0;
 		},
-		
+
 
 		deleteTask(task)
 		{
@@ -127,7 +131,7 @@ export default {
 		},
 
 		checkSendButton()
-		{		
+		{
 			return(this.modifyed)
 		}
 	 },
